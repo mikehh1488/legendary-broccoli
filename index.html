@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    body {
+      font-family: Verdana, sans-serif;
+    }
+
+    .month {
+      padding: 50px 25px;
+      width: 100%;
+      background: white;
+      text-align: center;
+    }
+
+    .month ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .month ul li {
+      color: #e61313;
+      font-weight: bolder;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .weekdays {
+      margin: 0;
+      padding: 10px 0;
+      background-color: #ddd;
+    }
+
+    .weekdays li {
+      display: inline-block;
+      width: 13.6%;
+      color: #666;
+      font-size: 16px;
+      font-weight: bolder;
+      text-align: center;
+    }
+
+    .days {
+      padding: 10px 0;
+      background: #eee;
+      margin: 0;
+    }
+
+    .days li {
+      list-style-type: none;
+      display: inline-block;
+      width: 13.6%;
+      height: 50px;
+      text-align: center;
+      font-size: 16px;
+      color: #777;
+      padding: 20px;
+    }
+
+    .days li .active {
+      padding: 8px 8px;
+      border-radius: 50%;
+      background: #e76464;
+      color: white !important;
+      cursor: pointer;
+    }
+
+    .days li.inactive {
+      color: #aaa;
+    }
+
+    #msg-card {
+      display: none;
+      padding: 15px;
+      align-items: center;
+      border: 1px solid #dadada;
+      border-radius: 3px;
+      width: 80%;
+      margin: 50px auto;
+    }
+
+    #video,
+    #message {
+      text-align: center;
+      margin: auto;
+      width: 75%;
+    }
+
+    #message {
+      margin-top: 25px;
+      font-style: italic;
+    }
+
+    /* Add media queries for smaller screens */
+    @media screen and (max-width:720px) {
+
+      .weekdays li,
+      .days li {
+        width: 13.1%;
+      }
+    }
+
+    @media screen and (max-width: 420px) {
+
+      .weekdays li,
+      .days li {
+        width: 12.5%;
+      }
+
+      .days li .active {
+        padding: 2px;
+      }
+    }
+
+    @media screen and (max-width: 290px) {
+
+      .weekdays li,
+      .days li {
+        width: 12.2%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="calendar">
+    <div class="month">
+      <ul>
+        <li>
+          Diciembre
+        </li>
+      </ul>
+    </div>
+
+    <ul class="weekdays">
+      <li>L</li>
+      <li>M</li>
+      <li>X</li>
+      <li>J</li>
+      <li>V</li>
+      <li>S</li>
+      <li>D</li>
+    </ul>
+
+    <ul class="days">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li class="inactive">1</li>
+      <li class="inactive">2</li>
+      <li class="inactive">3</li>
+      <li class="inactive">4</li>
+      <li class="inactive">5</li>
+      <li class="inactive">6</li>
+      <li class="inactive">7</li>
+      <li class="inactive">8</li>
+      <li class="inactive">9</li>
+      <li class="inactive">10</li>
+      <li class="inactive">11</li>
+      <li>12</li>
+      <li>13</li>
+      <li>14</li>
+      <li>15</li>
+      <li>16</li>
+      <li>17</li>
+      <li>18</li>
+      <li>19</li>
+      <li>20</li>
+      <li>21</li>
+      <li>22</li>
+      <li>23</li>
+      <li>24</li>
+      <li>25</li>
+      <li>26</li>
+      <li>27</li>
+      <li>28</li>
+      <li>29</li>
+      <li>30</li>
+      <li>31</li>
+    </ul>
+  </div>
+
+  <div id="msg-card">
+    <div id="video"></div>
+    <div id="message"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      const today = (new Date()).getDate();
+      const msgs = {
+        09: { link: 'https://www.youtube.com/embed/tsKhBBXPZx4', detail: 'Hola hermosa, mía, dueña de mi mundo, de mis pensamientos, de mis ocasos y crepusculos. espero estar viendo tus ojos claros llenos de felicidad cuando estes leyendo esto, te preguntaras ¿y esta vaina? fe ve fuper grave! esta vaina  Es el regalo que te quiero dar en nuestro 6 mes de felicidad (para mi son casi 10), primero quiero que leas el barquito y yo procederé a leer el tuyo (chaaaaan leen los barcos) la dinamica es muy sencilla en este calendario encontraras todo lso dias del mes desde hoy 13 hasta el 31, cada día se va habilitar un mensaje con una canción que me recuerda tanto a ti que en cierta forma es la lista de reporducción que tengo en mi mente cuando pienso en tí,se que algunas canciones probablemente no te gusten pero es un gran regalo ya que estas me ayudan a divagar en ese laberinto complicado de mis pensammientos al que no cualquier persona tiene acceso las canciones en ingles  estan subtituladas porque em cierta forma disfruto mucho la letra siento que es lo que acontece entre nosotros bueno empezamos... con esta primera canción quiero que entiendas qaue apesar de las dificultyades que tengamos espero que cuentes conmigo y yo pueda contar contgio para afrontar todos esos retos que la vida nos pone día a día espero disfrutes esto TE AMO Y GRACIAS POR DARME EL PRIVILEGIO DE COMPARTIR TU VIDA CON LA MIA.' },
+        10: { link: 'https://www.youtube.com/embed/LgYKvDFXyvA', detail: 'Este tipo es un crack!!! Creo que es un gran cantautor, cuando esucho esto  hablo solo y digo DEMONIOS, esta mujer supo darme todo lo necesario para que yo creyera de nuevo en la felicidad de compartir con otra  persona, esa persona que poco a poco fue recogiendo esos pedazos de mi corazón, un corazón noble y sencillo que sólo quería ser amado, tomaste esos pedazos  y los pegaste, a pesar de que cuando un corazón  se rompe y lo pégas no vuelve a hacer igual, aun así tu  lo arreglaste y lo estas cuidando  para que jamas se vuelva a romper' },
+        11: { link: 'https://www.youtube.com/embed/ikfSJHoKSys', detail: 'Que puedo decir de ésta, el destino en pequeño duende jugando con nosotros, tuvimos que amar, sufrir, llorar y experimentar en nuestras respectivas vidas vivencias que nos dejaron sabiduria,  dolor, felicidad, descontentos, amarguras, recuerdos buenos muy preciados así como recuerdos detestables de los que quisieramos olvidar todo el dolor causado , huecos en el alma que quizas no sanaran del todo aún así acá estamos los dos construyendo un camino, quizas sea muy pronto pero si nos vimos una vez y nos volvemos a ver de nuevo en la vida en  las extrañas situaciones que todo se dio pienso que es un guiño de ese duendesillo llamado destino que nos está diciendo "ya aprendieron la lección y ahora quiero que sean felices se que son el uno para el otro" sabes algo... siempre estaba en mis oraciones y mas grandes deseos que mi persona especial no sufriera mucho, que estuviera bien y que llegará  pronto a mi vida, aún asi el tiempo y el destino son dos viejos sabios que supieron cuando juntarnos y francamente deseo que no nos separen.' },
+        13: { link: 'https://www.youtube.com/embed/tsKhBBXPZx4', detail: 'Hola hermosa, mía, dueña de mi mundo, de mis pensamientos, de mis ocasos y crepusculos. espero estar viendo tus ojos claros llenos de felicidad cuando estes leyendo esto, te preguntaras ¿y esta vaina? fe ve fuper grave! esta vaina  Es el regalo que te quiero dar en nuestro 6 mes de felicidad (para mi son casi 10), primero quiero que leas el barquito y yo procederé a leer el tuyo (chaaaaan leen los barcos) la dinamica es muy sencilla en este calendario encontraras todo lso dias del mes desde hoy 13 hasta el 31, cada día se va habilitar un mensaje con una canción que me recuerda tanto a ti que en cierta forma es la lista de reporducción que tengo en mi mente cuando pienso en tí,se que algunas canciones probablemente no te gusten pero es un gran regalo ya que estas me ayudan a divagar en ese laberinto complicado de mis pensammientos al que no cualquier persona tiene acceso las canciones en ingles  estan subtituladas porque em cierta forma disfruto mucho la letra siento que es lo que acontece entre nosotros bueno empezamos... con esta primera canción quiero que entiendas qaue apesar de las dificultyades que tengamos espero que cuentes conmigo y yo pueda contar contgio para afrontar todos esos retos que la vida nos pone día a día espero disfrutes esto TE AMO Y GRACIAS POR DARME EL PRIVILEGIO DE COMPARTIR TU VIDA CON LA MIA.' },
+        14: { link: 'https://www.youtube.com/embed/LgYKvDFXyvA', detail: 'Este tipo es un crack!!! Creo que es un gran cantautor, cuando esucho esto  hablo solo y digo DEMONIOS, esta mujer supo darme todo lo necesario para que yo creyera de nuevo en la felicidad de compartir con otra  persona, esa persona que poco a poco fue recogiendo esos pedazos de mi corazón, un corazón noble y sencillo que sólo quería ser amado, tomaste esos pedazos  y los pegaste, a pesar de que cuando un corazón  se rompe y lo pégas no vuelve a hacer igual, aun así tu  lo arreglaste y lo estas cuidando  para que jamas se vuelva a romper' },
+        15: { link: 'https://www.youtube.com/embed/ikfSJHoKSys', detail: 'Que puedo decir de ésta, el destino en pequeño duende jugando con nosotros, tuvimos que amar, sufrir, llorar y experimentar en nuestras respectivas vidas vivencias que nos dejaron sabiduria,  dolor, felicidad, descontentos, amarguras, recuerdos buenos muy preciados así como recuerdos detestables de los que quisieramos olvidar todo el dolor causado , huecos en el alma que quizas no sanaran del todo aún así acá estamos los dos construyendo un camino, quizas sea muy pronto pero si nos vimos una vez y nos volvemos a ver de nuevo en la vida en  las extrañas situaciones que todo se dio pienso que es un guiño de ese duendesillo llamado destino que nos está diciendo "ya aprendieron la lección y ahora quiero que sean felices se que son el uno para el otro" sabes algo... siempre estaba en mis oraciones y mas grandes deseos que mi persona especial no sufriera mucho, que estuviera bien y que llegará  pronto a mi vida, aún asi el tiempo y el destino son dos viejos sabios que supieron cuando juntarnos y francamente deseo que no nos separen.' },
+        16: { link: 'https://www.youtube.com/embed/43HgurUMNcA', detail: 'Sin comentarios la letra de esta canción habla por si sola, creo que no necesito un mensaje para que entiendas que siento cuando escucho esto, a veces no hay que escribir sólo sentir. Pero como no puedo dejar esto cojo quiero poner una reflexión,a pesar de todo lo malo nunca me rendí a pesar de que las personas me cambiaron mis sentimientos y ganas de amar a alguien siempre estuvieron ahí para que tu llegaras y las tomaras, fue una lucha pero francamente agradezco la recompensa de esa sufrida lucha muchas veces me sentí solo acorralado y triste pero todo eso vale estar aquí contigo.' },
+        17: { link: 'https://www.youtube.com/embed/x2T2NxXX3dM', detail: 'Esto lo tienes que leer en tu cabeza con mi voz de narrador "señoras y señores se acerca el rocksito algo que no le gusta a laura, sonrie! peinsa en su novio, esta abriendo el link..." si le di cierto, sonreiste por las idioteces que escribo y hago como mis excentricas narraciones, de esta el mensaje e claro quiero pasar todo lo bueno y malo contigo no quiero perderme nada porque todos los moemtnos contigo me están enseñando a madurar como persona y pareja sacando mi mejor versión :)' },
+        18: { link: 'https://www.youtube.com/embed/whBcmlaSLJM', detail: 'Esto no está en mi lista, pero habia que meter algo de perreo que te gusta a ti y que mejor que loj liderej loj etraterrejtres dobleu way records! Pues que pudo decir de esta amor estar enamorado  es la mejor sensación para mi es una parte bien grande de mi felicidad, y pues que rico que seas tu quien despierte esa felicidad en mi.' },
+        19: { link: 'https://www.youtube.com/embed/GuOZARMaStY', detail: 'Esto no puede faltar JAJAJAJAJAAJAJAJA si te he enviado notas de voz ebrio sencillamente no puede faltar, esta canción me encanta! Soy solo tuyo nadie puede robarme el corazon como lo has hecho tu esta vez me quedé corto con las palabras si nos casamos esa va a hacer la cancion de nuestra boda NO JODAAA!!!' },
+        20: { link: 'https://www.youtube.com/embed/hOj7MnpcqFI', detail: 'Buuuf una rosconada muy barbara, aún asi  es lo que siento cuando agradezco a la vida por tarerte hasta mi para que dejara de hacer cosas que no debo, para hacer las cosas que quiero me gusta ser dentro de lo posible una buena persona, todo eso gracias a ti DIOS BENDIGA EL 17 DE AGOSTO DE 1992' },
+        21: { link: 'https://www.youtube.com/embed/JP4Fqkl0P4E', detail: 'Nunca voy a saber que le echaste a mis cocteles pero sea lo que sea, agradezco que lo hayas hecho porque desde ese día sentí una conexión contigo quizas fue solo cosa mia, y no importa si en un principio tu no sentiste lo mismo(yo estoy seguro que no) entiendo que no todos son como yo, tan irracionales con las cosas del amor, aun así agradezco mucho conocerte eres el mejor cumpleaños que he tenido un regalo que ya a estado conmigo casi 9 meses tu compañia, tu amor, tus risas, tus pellizcos, mordeduras las amo y valoro nunca habia tenido tantas ganas de vovlerme a enamorar y lo mas lindo de todo es que esa sganas fueron correpsondidas sigueme brindando tu aguita bendita que me cura el alma' },
+        22: { link: 'https://www.youtube.com/embed/AMTAQ-AJS4Y', detail: 'hola mi vida ten un excelente día,hoy sólo quiero que escuches una canción que me encanta y me recuerda a ti, sabias tu que cuando hablo de ti con otras personas y recuerdo lo feliz que me haces sonrio como un estupido enfrente de la gente, la otra vez me hicieron caer en cuenta yo no sabia jajajaja sólo me quedo hablando ahí y sonriendo eres la causa de mis sonrisas y quiero que esto sea todoel tiempo, así que si tu estas dipuesta a seguir quriendome sabes que yo tambien estoy dispuesto a que este amor no tenga limites' },
+        23: { link: '', detail: 'Tu eres todo lo que siempre anduve buscando mi vida y me voy a esforzar todos los dias para que nada ni nadie te arrebate de mi lado, gracias por compartir conmigo y darme la fuerza para ser un buen hombre todos los dias, la vida realmente se convierte mas bonita contigo' },
+        24: { link: 'https://www.youtube.com/embed/-jgJ_T3Jtw8', detail: 'Esta canción mueve mucho mi corazón me hace recordar que siempre he sido un tipo frio y duro, pero, cuando llega esa persona que enciende tu alma todo es mas facil y a pesar de tener miedo de entregar todo de mi, no me arrepiento de tomar esa decisión y por fin dedicarme a ser feliz. es de una pelicula que me gusta mucho jajajaj pero lo importamte es que tal como dice la letra como vivir como respirar si cuando tu no estas conmigo me empiezo a sofocar, quiero sentir el amor corrien a taves de  mis venas de nuevo POR TI LO ARRIESGO TODO...  y lo lograste de nuevo me siento mas vivo que nunca pues doy adicto a la droga mas peligrosa y hermosa de todas esa qaue llaman amor...' },
+        25: { link: 'https://www.youtube.com/embed/6A2CP78C-Ec', detail: 'El amor llega justo cuando no lo esperas, asi me paso a mi, un buen día estas cumpliendo años tranquilo y solo eres una chanda que quiere cometer los errores y en ese buen dia llega alguien que te cautiva y te hace preguntar MK! Yo creo que esto no me lo pierdo que buenas sensaciones me da esta mujer si o si tenemos que salir de nuevo, de ahí en adleante uno se vuelve un tipo intenso hasta que la señorita se digna a tener otra cita y PAAAAAM en un parpadeo se encuentran en cartagena o cualquier lugar del mundo jodidamente enamorados.' },
+        26: { link: 'https://www.youtube.com/embed/wZRWpr1G1Qw', detail: 'Mi hermosa, luz de mis oscuros senderos, ya debes estar cansada de estos mensajes pero yo los escribo con el mayor de los gustos, de esta canción me recuerda a nuestras acampadas esos momentos donde solo estamo tu y yo, no existe nada mas francamente los disfruto mucho, ojalá sean 1000000 de acampadas mas' },
+        27: { link: 'https://www.youtube.com/embed/bOKutdlQEvY', detail: 'había que romper esquemas y poner algo diferente mi amor solo tu sabes como hacerme tan feliz, cuando las cosas no  salen como quiero y algo no esta bnien tu eres lo primero que se me viene a la cabeza y a pesar de que trato de se runa persona fuerte y no dejarme agobiar por problemas cuando eso sucede solo piendo ojalá laura estuviera acá ella con un abrazo me haria sentir bien y así sería mucho mas facil afrontar las cosas' },
+        28: { link: 'https://www.youtube.com/embed/HzZGVPZaZWw', detail: 'Un clasico del genero :):), hoy quiero agardecer a la vida mi amor, por ponerte en mi camino ya se nos va acabando el calendario, espeor te este gustando quería darte algo diferente. Te amo mucho este año ya se nos va a ir ojalá vemgan muchos mas juntos tu hiciste de este año el mas bonito en muchisimo tiempo gracias por todo ' },
+        29: { link: 'https://www.youtube.com/embed/zuMP-bpHT-U', detail: 'Un poema hehco canción, en estos momentos solo quiero hacer las cosas de la mejor forma para hacerte feliz, tu felicidad es la mía gracias pór enseñarme a amar de nuevo, a reencontartme con la parte mas bonita de mi, tu lograste con mucha facilidad algo que yo temia, me siento muy bien sereno, tranquilo y con mucha expectativa de lo que la vida nos va a traer, lo que nos trajo es hermoso pro lo que viene aunque sea muy dificil será mejor me voy a encaragr de que sea así.' },
+        30: { link: 'https://www.youtube.com/embed/mlpG29xB1oU', detail: 'Amo está cancion, siempre espere a alguien para decirle lo que dice acá cuando estoy en tus brazos siento que estoy en mi hogar, un hogar donde me cuidan, me quieren, me aman, me respetan, un lugar donde la tristeza y la desesperación serán tratadas con ese antibiotico que lo cura todo el amor. puedo sentir como tu te vas convirtiendo en otro de los motorsitos de mi vida esos motorsitos me hacen esforzarme para que me vaya bien en todo cielo te adoro gracias por compartir conmigo todo este tiempo' },
+        31: { link: '', detail: 'Hoy no hay mensaje revisa el link está mucho mas interesante:) :*' },
+      }
+
+      $("li:contains('" + today + "')")
+        .filter(function () {
+          return Number($(this).text()) === today;
+        })
+        .html("<span class='active'>" + today + "</span>")
+
+      const video = `<iframe width="560" height="315" src="${msgs[today].link}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; autoplay; picture-in-picture" allowfullscreen></iframe>`
+      const msg = msgs[today].detail;
+
+      $(".active").click(function () {
+        $("#video").html(video);
+        $("#message").html(msg);
+        $("#calendar").hide();
+        $("#msg-card").css("display", "block");
+      });
+    });
+  </script>
+</body>
+
+</html>
